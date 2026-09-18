@@ -5,7 +5,7 @@
 
 # CRISP-AG — Comprehensive Risk & Implementation Standard for Practical Agentic Governance
 
-**Public edition of v3.0** · Author: David Reed, PhD · Generated 2026-09-17
+**Public edition of v3.0** · Author: David Reed, PhD · Generated 2026-09-18
 
 > This is a brand-neutral edition, published as general best-practice guidance. It
 > carries no organisation-specific implementation detail. Draft-review front matter has been removed: the draft banner, the reviewer preamble, the reviewer question list, and the pre-publication decision list.

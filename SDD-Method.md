@@ -5,7 +5,7 @@
 
 # Specification-Driven Design for Agentic Systems — The Method
 
-**Public edition** · Author: David Reed, PhD · Generated 2026-09-17
+**Public edition** · Author: David Reed, PhD · Generated 2026-09-18
 
 > This is a brand-neutral edition, published as general best-practice guidance. It
 > carries no organisation-specific implementation detail. This is the method, with every illustration set in a neutral worked example: a system that extracts contractual obligations from commercial agreements. The internal edition's organisation-specific worked example and platform playbook are not included — they describe an operating model rather than a method, and renaming would not have made them brand-neutral. Each requirement is stated inline rather than cited by an identifier, so this document stands on its own.
@@ -255,3 +255,82 @@ An LLM used as a judge is itself a model with biases — position, verbosity, an
 Drift is a change in the distribution of outputs not explained by a change in the distribution of inputs \[7\]. It is detected by defined metrics with baselines and windows — approval or straight-through rates, reviewer overturn rates, per-field error rates, subgroup divergences — and by a change in the model identifier behind a pinned name. A weekly production sample must be large enough that the threshold is distinguishable from zero: a 5% hallucination threshold cannot be checked on 20 cases, where one event is 5%. The discipline: define the metric, the baseline, the window, and the sample size together, and make an identifier change a drift event by definition rather than a discovery.
 
 > **A note on evidence quality throughout.** Rath's Agent Stability Index is cited for its structure, not its magnitudes — its validation is simulation-based \[7\]. The 2026 spec-driven-development studies are small, high-variance, and in some cases pre-registered without results yet \[15, 29\]. The independent contract-extraction benchmarks are the strongest evidence in this document and they are not specific to any one document type \[24–27\]. The method is designed so that the organization replaces these priors with its own measurements within the first two quarters of operation.
+
+**References**
+
+*Sources cited above. Numbering follows the full edition, so a reader comparing the two documents sees the same numbers.*
+
+1. A lease administrator uploads a 78-page executed office lease for Client K. document_received is written to the audit store before anything else runs.
+
+2. Pre-flight passes: OCR quality above threshold, English, all pages present and ordered, no screening content, no injection patterns, no watch-list hit.
+
+3. IntakeAgent classifies the document as a base lease and opens a new lease family. ExtractionAgent produces 94 fields, each with a citation or a NOT_FOUND status; 31 are Tier A.
+
+4. CriticalDateAgent derives expiration, three option windows, and a CAM audit deadline, each with a derivation trace to the clauses it used.
+
+5. The calibrated estimator scores every field. 52 Tier B and C fields exceed their thresholds and are marked straight-through; 11 Tier B fields fall below and join the review queue with all 31 Tier A fields.
+
+6. A senior lease analyst verifies the 31 Tier A fields (confirming 29, correcting 2 — a rent step date off by one month because the model read a table row boundary wrong — with the corrections recorded as reviewer feedback), reviews the 11 routed fields, and RELEASES the abstract. The release record carries her identifier, the model identifier, and the prompt version.
+
+7. Rath, A. "Agent Drift: Quantifying Behavioral Degradation in Multi-Agent LLM Systems Over Extended Interactions." arXiv:2601.04170, January 2026. Agent Stability Index (12 metrics, 4 categories); validation is simulation-based — cited for structure, not magnitudes.
+
+9. Delimarsky, D. "Spec-driven development with AI: Get started with a new open source toolkit." GitHub Blog, 2 September 2025. GitHub Spec-Kit v1.0.3, 1 September 2026; README disclaimer on community extensions (github.com/github/spec-kit).
+
+10. Anthropic. Claude Code documentation (code.claude.com): *Memory* ("CLAUDE.md is context, not enforced configuration… To block an action regardless of what Claude decides, use a PreToolUse hook instead"); *Hooks* (event list, exit-code semantics, permissionDecision, Stop-hook eight-block ceiling); *Permissions* and *Permission modes*; *Headless* (claude -p, --json-schema, dontAsk); *Skills*; *Best practices*. Accessed 4 September 2026.
+
+11. Agentic AI Foundation (Linux Foundation). *AGENTS.md* specification, donated by OpenAI 9 December 2025; OpenAI Codex documentation on hooks and AGENTS.md (32 KiB cap). Accessed September 2026.
+
+12. Amazon Web Services. *Kiro documentation*: specs (requirements.md in EARS notation, design.md, tasks.md), steering, agent hooks, property-based tests generated from EARS requirements. GA 17 November 2025. Accessed September 2026.
+
+13. Thoughtworks. *Technology Radar* Vol. 33 (November 2025; spec-driven development, Assess) and Vol. 34 (April 2026; GitHub Spec Kit and OpenSpec, Assess; context engineering and curated shared instructions, Adopt; agent instruction bloat, Caution; AI-accelerated shadow IT and complacency with AI-generated code, Caution). Cursor documentation: "AI guidance should not be your only security control."
+
+14. Gloaguen, T., et al. "Do AI Agents Need Context Files?" arXiv:2602.11988, February 2026 (context files do not generally improve task success; \>20% cost increase). Khatri, S. arXiv:2607.27250, July 2026. Both preprints.
+
+15. Feng, Chen, Meyer, Mussbacher. "Structured Spec-Driven Engineering." arXiv:2605.02455, May 2026 (pilot; any structured spec improved test pass rate; high variance). Rosa, et al. "Spec-Driven Code Generation with LLMs: Empirical Study Design." SANER 2026 registered report (no results yet). Alenezi, arXiv:2607.16680 (position paper; enterprise case claims unverified).
+
+16. Regulation (EU) 2024/1689 (Artificial Intelligence Act) as amended by Regulation (EU) 2026/1744 (Digital Omnibus on AI), OJ L 24 July 2026, in force 27 July 2026: Article 50 applicable 2 August 2026; Annex III obligations deferred to 2 December 2027. European Commission, draft guidelines on high-risk classification, 19 May 2026 (Art. 6(3) exemption lost where a system issues a specific recommendation or evaluation). Annex III point 5(b) (creditworthiness of natural persons).
+
+17. Regulation (EU) 2016/679 (GDPR) Arts. 22, 28, 35; CJEU, *SCHUFA Holding*, C-634/21, 7 December 2023; UK Data (Use and Access) Act 2025, UK GDPR Arts. 22A–22D, commenced 5 February 2026 (SI 2026/82); EDPB Opinion 22/2024 (processors and sub-processors) and Opinion 28/2024 (AI models), 2024.
+
+18. California Privacy Protection Agency, regulations on automated decisionmaking technology, risk assessments, and cybersecurity audits, approved 23 September 2025, effective 1 January 2026 (ADMT notice and opt-out duties from 1 January 2027; first-compliance date reported variously as 1 January or 1 April 2027 — verify). Colorado SB 26-189 (2026), effective 1 January 2027, replacing SB 24-205.
+
+19. Fair Credit Reporting Act, 15 U.S.C. §1681 et seq. (HUD 2 May 2024 AI tenant-screening guidance and CFPB January 2024 advisory opinions withdrawn in 2025; statutory duties remain). Texas Responsible Artificial Intelligence Governance Act (HB 149), effective 1 January 2026, safe harbour for substantial compliance with NIST AI RMF. OFAC sanctions programs (strict liability); FinCEN CRE AML ANPRM (December 2021; no proposed rule as of September 2026).
+
+20. The financial-reporting standards governing the extracted fields — the recognition, measurement, option and modification requirements that determine which fields are Tier A.
+
+21. AICPA SSAE 18 / AT-C 320 (SOC 1); IAASB ISAE 3402; PCAOB AS 2601 and AICPA AU-C 402 (service organizations and complementary user-entity controls).
+
+22. PCAOB. Amendments to AS 1105 *Audit Evidence* and AS 2301 *The Auditor's Responses to the Risks of Material Misstatement* relating to technology-assisted analysis, effective for audits of fiscal years beginning on or after 15 December 2025 (FY2026). PCAOB Staff Spotlight on generative AI, 22 July 2024. AICPA SAS 142.
+
+23. Professional-practice standards and licensing statutes in the applicable domain — the requirements that a qualified professional evaluate the tool and the data, perform independent analysis, and remain the terminal decision-maker for outputs the standard governs.
+
+24. Hendrycks, D., et al. "CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review." NeurIPS 2021 Datasets and Benchmarks (arXiv:2103.06268): 510 contracts, 13,101 clauses, 41 categories; best 2021 baseline AUPR 47.8%.
+
+25. "The Hidden Structure: Input Format and LLM Performance on Contract Review." arXiv:2505.12837, 2025 (CUAD subset; GPT-4.1 exact match 48% → 79% with structure-aware input; authors judge insufficient for autonomous decisions).
+
+26. "ContractEval: Benchmarking LLMs for Clause-Level Legal Risk Identification." arXiv:2508.03080, 2025 (19 models; performance comparable to junior legal assistants; over-abstention in open models).
+
+27. "ContractScrub." arXiv:2608.20204, 20 August 2026 (nine frontier models; best macro recall 0.75, F1 \< 0.65; contextual inference recall 0.427; degradation when related text is \> 10,000 characters apart).
+
+28. ApplyBoard. "Embedding Confidence to Enhance Trust in AI Document Entity Extraction." IEEE ICPRS 2025 (final-token-embedding classifier: F1 97.5%, precision 99.9%, recall 95.2% at 5% base error; LLM self-critique specificity 12.9%). "Know Your Limits: A Survey of Abstention in Large Language Models." TACL 2024.
+
+29. DORA (Google Cloud). *Accelerate State of DevOps 2024* (25% AI adoption increase associated with −7.2% delivery stability); *State of AI-assisted Software Development 2025*, 23 September 2025 (~5,000 respondents; AI as amplifier; DORA AI Capabilities Model); *ROI of AI-assisted Software Development*, May 2026.
+
+30. Veracode. *2025 GenAI Code Security Report*, 30 July 2025 (~45% of AI-generated code insecure across 100+ models); *Spring 2026 GenAI Code Security Update*, 24 March 2026 (45–55% pass rates, flat).
+
+31. METR. "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity." 10 July 2025 (RCT; developers 19% slower while believing 20% faster). Cui, Z., et al. "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments." *Management Science*, 2025 (+26% completed tasks; 4,867 developers).
+
+33. Xiong, M., et al. "Can LLMs Express Their Uncertainty? An Empirical Evaluation of Confidence Elicitation in LLMs." ICLR 2024 (arXiv:2306.13063). Tian, K., et al. "Just Ask for Calibration." EMNLP 2023 (arXiv:2305.14975).
+
+34. Miller, E. "Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations." arXiv:2411.00640, November 2024.
+
+35. Zheng, L., et al. "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena." NeurIPS 2023 (arXiv:2306.05685). Thakur, A. S., et al. "Judging the Judges: Evaluating Alignment and Vulnerabilities in LLMs-as-Judges." arXiv:2406.12624 (2024; published 2025).
+
+36. Anthropic. Claude Developer Platform, Messages API reference, temperature: "Deprecated. Models released after Claude Opus 4.6 do not support setting temperature. A value of 1.0 will be accepted for backwards compatibility, all other values will be rejected with a 400 error… Note that even with temperature of 0.0, the results will not be fully deterministic." Accessed 4 September 2026. He, H. (Thinking Machines Lab). "Defeating Nondeterminism in LLM Inference." September 2025 (80 distinct completions from 1,000 identical temperature-0 requests).
+
+37. OWASP. *Top 10 for LLM Applications 2025* (March 2025: LLM01 Prompt Injection, LLM03 Supply Chain, LLM06 Excessive Agency, LLM08 Vector and Embedding Weaknesses); *Top 10 for Agentic Applications 2026* (9 December 2025); *Agentic AI — Threats and Mitigations* (February 2025).
+
+38. Databricks documentation (docs.databricks.com), accessed 4 September 2026: *AI governance with Unity Gateway* (GA 4 August 2026; guardrails and service policies Beta); *Foundation Model APIs — supported models* (Claude endpoints; databricks-claude-sonnet-4 retirement 9 October 2026; Claude Sonnet 5 without sampling parameters); *Structured outputs* (Claude limitations); *Databricks Geos* and *Foundation Model APIs compliance*; *Inference tables* (best-effort delivery; 10 MiB payload limit); *Build agents on Databricks* (Databricks Apps as recommended runtime); *MLflow 3 GenAI evaluation, datasets, judges, production monitoring, tracing to Unity Catalog, Prompt Registry (Beta)*; *Data quality monitoring / data profiling*; *Declarative Automation Bundles*; *Unity Catalog privileges (fine-grained INSERT/UPDATE/DELETE, Beta), table properties (\`delta.appendOnly\`), constraints, multi-statement transactions*; *Databricks Apps authorization*; *Databricks AI Search*; *Agent skills in Unity Catalog (Beta)*; *Coding-agent integration via model provider services*.
+
+42. Mavin, A., Wilkinson, P., Harwood, A., Novak, M. "Easy Approach to Requirements Syntax (EARS)." IEEE RE 2009.
+
