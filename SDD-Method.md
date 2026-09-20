@@ -5,7 +5,7 @@
 
 # Specification-Driven Design for Agentic Systems — The Method
 
-**Public edition** · Author: David Reed, PhD · Generated 2026-09-18
+**Public edition** · Author: David Reed, PhD · Generated 2026-09-20
 
 > This is a brand-neutral edition, published as general best-practice guidance. It
 > carries no organisation-specific implementation detail. This is the method, with every illustration set in a neutral worked example: a system that extracts contractual obligations from commercial agreements. The internal edition's organisation-specific worked example and platform playbook are not included — they describe an operating model rather than a method, and renaming would not have made them brand-neutral. Each requirement is stated inline rather than cited by an identifier, so this document stands on its own.
@@ -14,7 +14,7 @@
 
 **Method**
 
-Part A is for everyone who will write, review, or sign off a specification for an agentic system. It sets out why the conventional approach is insufficient, the one distinction that organizes everything else, the four layers a specification needs, ten principles with worked examples, the lifecycle that connects specification to enforcement, how to treat the regulatory frame as an input, and the evaluation science the method depends on.
+This document is for everyone who will write, review, or sign off a specification for an agentic system. It sets out why the conventional approach is insufficient, the one distinction that organizes everything else, the four layers a specification needs, ten principles with worked examples, the lifecycle that connects specification to enforcement, how to treat the regulatory frame as an input, and the evaluation science the method depends on.
 
 **A1. Why agentic systems need a different kind of specification**
 
@@ -178,7 +178,7 @@ Each principle is stated, justified, shown in a worked example — a system that
 
 > The model identifier and prompt version shall be pinned in configuration and recorded on every decision; any change to either, or to a judge model or a rule set, shall require the golden set, the calibration record, and the judge validation to be re-run and approved by a named person before autonomous operation resumes.
 
-**Why.** Vendors retire and update identifiers on their own schedule — Databricks retires databricks-claude-sonnet-4 on 9 October 2026, for instance \[38\] — and a system that pins nothing is drifting whether or not anyone is watching. FDA's predetermined-change-control thinking \[see Part A6\] and the professional-standards requirement for written reliability assessments of high-impact outputs both describe the same control.
+**Why.** Vendors retire and update identifiers on their own schedule — Databricks retires databricks-claude-sonnet-4 on 9 October 2026, for instance \[38\] — and a system that pins nothing is drifting whether or not anyone is watching. FDA's predetermined-change-control thinking (see A6) and the professional-standards requirement for written reliability assessments of high-impact outputs both describe the same control.
 
 **In the worked example.** Four change requirements: exact identifiers only; provenance on every record; a change gate with five evidence items and a named approver; immutable prompt versions once referenced by any persisted decision. A drift definition makes an observed identifier mismatch a drift event.
 
@@ -216,7 +216,7 @@ Two properties of the lifecycle matter more than its sequence. First, stages 2 t
 
 The method treats the regulatory and professional-standards frame as a worksheet completed early, not a review performed late. For each instrument: what it is, whether it binds this system in this jurisdiction, what it requires, and which requirement identifier carries it. Instruments that do not bind but embody good practice are adopted *by analogy* and labelled so.
 
-**The worksheet, completed for a global commercial real estate firm**
+**The worksheet, completed for a document-extraction agent set**
 
 The table below is the frame for the worked example, as of September 2026. It is what Principle 5 looks like when done. Every row produced at least one requirement.
 
@@ -232,7 +232,7 @@ The table below is the frame for the worked example, as of September 2026. It is
 | FCRA; sector screening guidance (some withdrawn 2025; statutory duties remain) \[19\] | Statute in force | Natural-person screening — guarantors, individual counterparties — is where FCRA, GDPR Art. 22, EU Annex III 5(b), and CA/CO ADMT converge. | The bar on natural-person scoring; a pre-flight invariant routing screening content to a human with no model call |
 | OFAC sanctions (strict liability) \[19\] | In force | Counterparty screening remains a compliance-officer decision; agents assemble evidence and flag. | A pre-flight watch-list check routing to compliance; no autonomous 'clear' |
 
-Two observations from completing the worksheet. The instruments that bite hardest on this system are financial-reporting and professional standards, not AI law: the auditor's need for reliable evidence and the surveyor's duty of independent analysis set the human terminal states. And AI law, where it does apply, rewards the same design — a human of record, disclosure of AI interaction, documented rationale — so the controls that satisfy SOC 1 and the applicable professional standard are the controls that keep the system out of the high-risk and ADMT categories. That convergence is not a coincidence; it is the reason the regulatory frame belongs at the front of the specification.
+Two observations from completing the worksheet. The instruments that bite hardest on this system are financial-reporting and professional standards, not AI law: the auditor's need for reliable evidence and the licensed professional's duty of independent analysis set the human terminal states. And AI law, where it does apply, rewards the same design — a human of record, disclosure of AI interaction, documented rationale — so the controls that satisfy SOC 1 and the applicable professional standard are the controls that keep the system out of the high-risk and ADMT categories. That convergence is not a coincidence; it is the reason the regulatory frame belongs at the front of the specification.
 
 **A7. Evaluation science: golden sets, calibration, judges, drift**
 
@@ -260,17 +260,17 @@ Drift is a change in the distribution of outputs not explained by a change in th
 
 *Sources cited above. Numbering follows the full edition, so a reader comparing the two documents sees the same numbers.*
 
-1. A lease administrator uploads a 78-page executed office lease for Client K. document_received is written to the audit store before anything else runs.
+1. Piskala, D. B. "Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants." arXiv:2602.00180, January 2026. Single-author preprint; defines the spec-first / spec-anchored / spec-as-source tiers.
 
-2. Pre-flight passes: OCR quality above threshold, English, all pages present and ordered, no screening content, no injection patterns, no watch-list hit.
+2. Bhardwaj, V. P. "Agent Behavioral Contracts: Formal Specification and Runtime Enforcement for Reliable Autonomous AI Agents." arXiv:2602.22302, February 2026. Single-author preprint; evaluated on 1,980 sessions across seven models.
 
-3. IntakeAgent classifies the document as a base lease and opens a new lease family. ExtractionAgent produces 94 fields, each with a citation or a NOT_FOUND status; 31 are Tier A.
+3. Meyer, B. *Object-Oriented Software Construction*, 2nd ed. Prentice Hall, 1997 (Design by Contract).
 
-4. CriticalDateAgent derives expiration, three option windows, and a CAM audit deadline, each with a derivation trace to the clauses it used.
+4. Nowaczyk, S. "Architectures for Building Agentic AI." arXiv:2512.09458, December 2025; book chapter, *Generative and Agentic AI Reliability* (Springer Nature).
 
-5. The calibrated estimator scores every field. 52 Tier B and C fields exceed their thresholds and are marked straight-through; 11 Tier B fields fall below and join the review queue with all 31 Tier A fields.
+5. Moslemi, Z., et al. "POLARIS: Typed Planning and Governed Execution for Agentic AI in Back-Office Automation." arXiv:2601.11816, January 2026.
 
-6. A senior lease analyst verifies the 31 Tier A fields (confirming 29, correcting 2 — a rent step date off by one month because the model read a table row boundary wrong — with the corrections recorded as reviewer feedback), reviews the 11 routed fields, and RELEASES the abstract. The release record carries her identifier, the model identifier, and the prompt version.
+6. Khan, R., Joyce, D., Habiba, M. "AGENTSAFE: A Unified Framework for Ethical Assurance and Governance in Agentic AI." arXiv:2512.03180, December 2025.
 
 7. Rath, A. "Agent Drift: Quantifying Behavioral Degradation in Multi-Agent LLM Systems Over Extended Interactions." arXiv:2601.04170, January 2026. Agent Stability Index (12 metrics, 4 categories); validation is simulation-based — cited for structure, not magnitudes.
 
@@ -294,7 +294,7 @@ Drift is a change in the distribution of outputs not explained by a change in th
 
 18. California Privacy Protection Agency, regulations on automated decisionmaking technology, risk assessments, and cybersecurity audits, approved 23 September 2025, effective 1 January 2026 (ADMT notice and opt-out duties from 1 January 2027; first-compliance date reported variously as 1 January or 1 April 2027 — verify). Colorado SB 26-189 (2026), effective 1 January 2027, replacing SB 24-205.
 
-19. Fair Credit Reporting Act, 15 U.S.C. §1681 et seq. (HUD 2 May 2024 AI tenant-screening guidance and CFPB January 2024 advisory opinions withdrawn in 2025; statutory duties remain). Texas Responsible Artificial Intelligence Governance Act (HB 149), effective 1 January 2026, safe harbour for substantial compliance with NIST AI RMF. OFAC sanctions programs (strict liability); FinCEN CRE AML ANPRM (December 2021; no proposed rule as of September 2026).
+19. Fair Credit Reporting Act, 15 U.S.C. §1681 et seq. (2024-25 sector screening guidance withdrawn in 2025; statutory duties remain). Texas Responsible Artificial Intelligence Governance Act (HB 149), effective 1 January 2026, safe harbour for substantial compliance with NIST AI RMF. OFAC sanctions programs (strict liability).
 
 20. The financial-reporting standards governing the extracted fields — the recognition, measurement, option and modification requirements that determine which fields are Tier A.
 
