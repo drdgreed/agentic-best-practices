@@ -892,7 +892,7 @@ The roadmap above describes the typical Class 3 case. Class 1 deployments compre
 
 An enterprise implementation of CRISP-AG consists of four instruments: a *document standard* that defines the content of the artifacts in §5 and Appendix A; a *specification form* in which contracts, invariants, and governance clauses are written; a *runtime control specification* that defines the mechanisms enforcing DAS positions and the standing governance invariants of §6.3; and a *delivery workflow* that sequences the phases of §6 as gated stages with named approvers.
 
-The author's employer implements CRISP-AG with the *Agentic PRD Standard* (v3), *Specification-Driven Design for Agentic Systems* (v1.0.1), the *Enterprise Agentic AI Harness Specification* (v1.0), and the *Agentic Delivery Workflow* (v1.1). Those documents are internal and are cited here by title only. Where an implementation and this framework differ, the implementation's own precedence rule records the resolution: this framework governs the definition of the governance artifacts; implementations govern their content, form, controls, and sequence.
+Where an implementation and this framework differ, the implementation's own precedence rule records the resolution: this framework governs the definition of the governance artifacts; implementations govern their content, form, controls, and sequence.
 
 # 11. Validation Agenda
 
