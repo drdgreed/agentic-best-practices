@@ -5,9 +5,9 @@
 **Two frameworks for specifying and governing agentic AI systems —
 published as general best-practice guidance.**
 
-![docs](https://img.shields.io/badge/documents-2-1f6feb?style=for-the-badge)
-![words](https://img.shields.io/badge/~27,500%20words-3fb950?style=for-the-badge)
-![status](https://img.shields.io/badge/brand--neutral-8957e5?style=for-the-badge)
+![series](https://img.shields.io/badge/series-7%20papers-1f6feb?style=for-the-badge)
+[![home](https://img.shields.io/badge/read%20at-drdavidreed.com%2Fpapers-3fb950?style=for-the-badge)](https://drdavidreed.com/papers/)
+![license](https://img.shields.io/badge/license-CC%20BY%204.0-8957e5?style=for-the-badge)
 
 *David Reed, PhD*
 
@@ -80,15 +80,17 @@ measured ones.
 
 ---
 
-## Editions
+## Where the documents live
 
-These are brand-neutral editions. They carry the method and the framework, with every
-illustration set in a neutral worked example and every requirement stated inline rather
-than cited by an identifier, so each document stands on its own.
+Both documents now live on drdavidreed.com as Parts 1 and 3 of a seven-paper series,
+*[Agentic AI Governance in Practice](https://drdavidreed.com/papers/)*. The published
+pages are the current, maintained versions. `CRISP-AG.md` and `SDD-Method.md` in this
+repository are short pointers to them.
 
-Organisation-specific material — a fully worked system specification and a platform
-playbook — is not included. That material describes an operating model rather than a
-method, and would not have been made general by renaming.
+The Specification-Driven Design paper now carries more than the method. Part B is an
+illustrative worked example, specified in full, and Part C is a build playbook. The
+other five papers in the series cover the requirements standard, the harness, security
+and vendor-control specifications, and the delivery workflow that binds them.
 
 ---
 
