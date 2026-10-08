@@ -20,7 +20,7 @@ published as general best-practice guidance.**
 | | Document | It answers |
 |---|---|---|
 | 🏛️ | **[CRISP-AG](https://drdavidreed.com/papers/crisp-ag/)** — An Artifact-Centered Framework for Enterprise Agentic AI Governance | *"What is this agent allowed to do, and who approves it?"* |
-| 📐 | **[Specification-Driven Design for Agentic Systems](SDD-Method.md)** — the method | *"How do I write a specification that actually constrains what gets built?"* |
+| 📐 | **[Specification-Driven Design for Agentic Systems](https://drdavidreed.com/papers/specification-driven-design/)** — the method | *"How do I write a specification that actually constrains what gets built?"* |
 
 They fit together. CRISP-AG classifies agents by consequence and assigns each action an
 approval position. The SDD method is how you write the specification that holds an agent
@@ -57,7 +57,7 @@ flowchart TD
     style E fill:#2d1f3d,stroke:#bc8cff,color:#c9d1d9
 ```
 
-**In a hurry?** Read the SDD method's **A2** (~640 words) and CRISP-AG's **§4** (~750
+**In a hurry?** Read the SDD method's **[A2](https://drdavidreed.com/papers/specification-driven-design/#a2-the-organizing-distinction-what-enforces-and-what-guides)** (~1,300 words) and CRISP-AG's **§4** (~750
 words). Between them they give you the two distinctions everything else hangs on: what
 can refuse versus what can only suggest, and how much damage this agent could do.
 
@@ -98,8 +98,9 @@ method, and would not have been made general by renaming.
 > Governance* (Version 3.0). Agentic AI Governance in Practice, Part 1.
 > https://drdavidreed.com/papers/crisp-ag/
 
-> Reed, D. (2026). *Specification-Driven Design for Agentic Systems: The Method*,
-> v1.0.2, public edition.
+> Reed, D. (2026). *Specification-Driven Design for Agentic Systems* (Version 1.0.3).
+> Agentic AI Governance in Practice, Part 3.
+> https://drdavidreed.com/papers/specification-driven-design/
 
 ---
 
